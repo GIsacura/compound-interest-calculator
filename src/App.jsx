@@ -44,33 +44,33 @@ function App() {
           validationSchema = {yup.object({
             deposit: yup
               .number()
-              .required('Obligatorio')
-              .typeError('Debe ser un numero'),
+              .required('Required')
+              .typeError('Must be a number'),
             contribution: yup
               .number()
-              .required('Obligatorio')
-              .typeError('Debe ser un numero'),
+              .required('Required')
+              .typeError('Must be a number'),
             years: yup
               .number()
-              .required('Obligatorio')
-              .typeError('Debe ser un numero'),
+              .required('Required')
+              .typeError('Must be a number'),
             rate: yup
               .number()
-              .required('Obligatorio')
-              .typeError('Debe ser un numero')
-              .min(0, 'El valor minimo es 0')
-              .max(1, 'El valor maximo es 1'),
+              .required('Required')
+              .typeError('Must be a number')
+              .min(0, 'Min value is 0')
+              .max(1, 'Max value is 1'),
           })}
         >
           <Form>
-            <Input name="deposit" label="Deposito inicial"/>
-            <Input name="contribution" label="Contribucion anual"/>
-            <Input name="years" label="Años"/>
-            <Input name="rate" label="Interes estimado"/>
-            <Button type='submit'>Calcular</Button>
+            <Input name="deposit" label="Initial Deposit ($)"/>
+            <Input name="contribution" label="Anual Contribution ($)"/>
+            <Input name="years" label="Years"/>
+            <Input name="rate" label="Estimated rate"/>
+            <Button type='submit'>Calculate</Button>
           </Form>
         </Formik>
-        {balance !== '' ? <Balance>Balance final: {balance}</Balance> : null}
+        {balance !== '' ? <Balance>Final balance: {balance}</Balance> : null}
       </Section>
     </Container>
   )
